@@ -4,6 +4,9 @@
   "description": "Examples showcasing Webpack 5's Module Federation",
   "repository": "https://github.com/module-federation/module-federation-examples.git",
   "author": "Zack Jackson <zackary.l.jackson@gmail.com> (https://github.com/ScriptedAlchemy)",
+  "contributors": [
+    "Prasanna Mestha <prasanna@privjs.com> (https://github.com/prasannamestha)"
+  ],
   "license": "MIT",
   "private": true,
   "workspaces": {
@@ -13,6 +16,7 @@
       "./bi-directional/*",
       "./startup-code/*",
       "./different-react-versions/*",
+      "./native-federation-react/*",
       "./self-healing/*",
       "./react-hmr/*",
       "./comprehensive-demo/*",
@@ -38,9 +42,12 @@
       "./vue2-in-vue3/*",
       "./vue3-demo/*",
       "./vue-cli/*",
-      "./genesis/*"
+      "./genesis/*",
+      "./typescript-monorepo/*"
     ],
     "nohoist": [
+      "**/@types",
+      "**/@types/**",
       "**/svelte",
       "**/svelte/**",
       "**/svelte-loader",
@@ -63,6 +70,7 @@
     "submodules": "git pull --recurse-submodules",
     "prettier": "prettier --write \"**/*.{js,jsx,json,md,ts,tsx}\"",
     "prettier:check": "prettier --list-different \"**/*.{js,jsx,json,md,ts,tsx}\"",
-    "test": "jest test/index.spec.js --maxWorkers=2"
+    "test": "jest test/index.spec.js --maxWorkers=2",
+    "postinstall": "git pull --recurse-submodules"
   }
 }
